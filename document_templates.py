@@ -1,14 +1,13 @@
 def generate_cv(data):
-    return f"""
-Curriculum Vitae
+    return f"""Curriculum Vitae
 
 Name: {data['name']}
 Email: {data['email']}
 Phone: {data['phone']}
 Address: {data['address']}
 
-Objective:
-{data['objective']}
+Career Summary:
+{data['summary']}
 
 Education:
 {data['education']}
@@ -19,234 +18,204 @@ Experience:
 Skills:
 {data['skills']}
 
-References:
-Available upon request.
+Projects:
+{data['projects']}
+
+Certifications:
+{data['certifications']}
 """
 
 def generate_leave_application(data):
-    return f"""
-To,
+    return f"""To,
 The {data['authority']},
-{data['institution']},
-{data['address']}
+{data['institution']}
 
-Subject: Application for Leave
+Subject: Request for Leave
 
 Respected Sir/Madam,
 
-I am writing to formally request leave from {data['start_date']} to {data['end_date']} due to {data['reason']}. I have ensured that my responsibilities will be managed during my absence.
+I am {data['name']} from {data['class']}. I request leave from {data['start_date']} to {data['end_date']} due to {data['reason']}.
 
-I kindly request you to grant me leave for the mentioned period. I shall be thankful for your kind consideration.
+Kindly approve my leave. I shall be grateful.
 
-Yours sincerely,
+Sincerely,
 {data['name']}
-{data['roll_number']}
-Date: {data['date']}
 """
 
 def generate_job_application(data):
-    return f"""
-To,
-The Hiring Manager,
-{data['company']},
-{data['address']}
+    return f"""To,
+HR Manager,
+{data['company']}
 
-Subject: Job Application for the Position of {data['position']}
+Subject: Application for {data['position']}
 
 Respected Sir/Madam,
 
-I am writing to express my interest in the {data['position']} position at your esteemed organization. With my background in {data['background']} and relevant experience, I am confident in my ability to contribute effectively.
+I am writing to apply for the position of {data['position']} at your esteemed company. With my experience in {data['experience']} and skills in {data['skills']}, I am confident I can contribute positively.
 
-I have attached my resume for your consideration. I look forward to the opportunity to discuss my application in more detail.
+Looking forward to your response.
 
 Sincerely,
 {data['name']}
 Email: {data['email']}
-Phone: {data['phone']}
-Date: {data['date']}
 """
 
-def generate_further_study_application(data):
-    return f"""
-To,
-The Head of Department,
-{data['institution']},
-{data['address']}
+def generate_study_application(data):
+    return f"""To,
+The Admission Office,
+{data['desired_institution']}
 
-Subject: Request for Permission to Pursue Further Studies
+Subject: Application for Further Study
 
 Respected Sir/Madam,
 
-I hope this message finds you well. I am writing to request your permission to pursue further studies in the field of {data['field_of_study']}. I believe that this academic endeavor will enhance my knowledge and skills, allowing me to contribute more effectively to my field.
+I am {data['name']}, currently studying in {data['current_program']} at {data['institution']}. I am writing to express my interest in applying for {data['desired_program']} at your institution. 
 
-I shall remain grateful for your kind approval.
+Reason for applying:
+{data['reason']}
 
-Yours sincerely,
+Thank you for your time and consideration.
+
+Sincerely,
 {data['name']}
-Roll Number: {data['roll_number']}
-Date: {data['date']}
 """
 
 def generate_character_certificate(data):
-    return f"""
-Character Certificate
+    return f"""To Whom It May Concern,
 
-This is to certify that Mr./Ms. {data['name']}, son/daughter of {data['father_name']}, was a student of {data['institution']} from {data['start_year']} to {data['end_year']}. During their stay, their conduct and behavior remained satisfactory, and no disciplinary action was ever taken against them.
+This is to certify that {data['name']}, son/daughter of {data['father_name']}, was a student at {data['institution']} from {data['duration']}. During this period, their conduct was {data['behavior']}.
 
-We wish them the best for future endeavors.
-
-Principal
+Principal,
 {data['institution']}
-Date: {data['date']}
 """
 
 def generate_internship_application(data):
-    return f"""
-To,
-The HR Department,
-{data['company']},
-{data['address']}
+    return f"""To,
+HR Manager,
+{data['company']}
 
-Subject: Application for Internship
+Subject: Request for Internship
 
 Respected Sir/Madam,
 
-I am currently a student of {data['degree']} at {data['institution']}. I am writing to apply for an internship opportunity in your organization to gain practical experience in the field of {data['field']}. I am enthusiastic and eager to learn and grow under professional guidance.
+I am {data['name']}, currently enrolled in the {data['program']} program at {data['institution']}. I am interested in applying for an internship opportunity at your company.
 
-Kindly consider my application. I shall be thankful.
+Reason:
+{data['reason']}
+
+I would be grateful for the opportunity.
 
 Sincerely,
 {data['name']}
-Email: {data['email']}
-Phone: {data['phone']}
-Date: {data['date']}
 """
 
 def generate_bank_account_application(data):
-    return f"""
-To,
-The Branch Manager,
-{data['bank_name']},
-{data['branch_address']}
+    return f"""To,
+Branch Manager,
+{data['bank_name']}
 
 Subject: Request to Open Bank Account
 
 Respected Sir/Madam,
 
-I wish to open a savings/current account at your branch. My complete details are as follows:
+I am {data['name']} bearing CNIC {data['cnic']}. I wish to open a {data['account_type']} account in your bank.
 
-Full Name: {data['name']}
-CNIC: {data['cnic']}
-Contact: {data['contact']}
-Address: {data['address']}
+My address is:
+{data['address']}
 
-I request you to kindly initiate the process and inform me about the required documentation.
-
-Thanking you.
+Please guide me through the process.
 
 Sincerely,
 {data['name']}
-Date: {data['date']}
 """
 
 def generate_fee_concession_application(data):
-    return f"""
-To,
+    return f"""To,
 The Principal,
-{data['institution']},
-{data['address']}
+{data['institution']}
 
 Subject: Application for Fee Concession
 
 Respected Sir/Madam,
 
-I am {data['name']}, currently enrolled in {data['class']}. Due to financial constraints at home, I am unable to pay the full tuition fee. I humbly request a fee concession so I can continue my studies without interruption.
+I am {data['name']} of class {data['class']}. I request a fee concession due to {data['reason']}. Kindly consider my request.
 
-I shall be highly obliged for your kind consideration.
-
-Yours sincerely,
+Sincerely,
 {data['name']}
-Roll Number: {data['roll_number']}
-Date: {data['date']}
 """
 
 def generate_exam_center_change_application(data):
-    return f"""
-To,
+    return f"""To,
 The Controller of Examinations,
-{data['university']},
-{data['address']}
 
-Subject: Request for Change of Examination Center
+Subject: Application for Change of Examination Center
 
 Respected Sir/Madam,
 
-I am a registered student of {data['program']} under roll number {data['roll_number']}. I kindly request you to change my examination center from {data['current_center']} to {data['requested_center']} due to {data['reason']}.
+I am {data['name']}, Roll No. {data['roll_no']}. I request to change my exam center from {data['current_center']} to {data['desired_center']} due to {data['reason']}.
 
-Kindly consider my request at your earliest convenience.
+I will appreciate your kind approval.
 
 Sincerely,
 {data['name']}
-Date: {data['date']}
 """
 
 def generate_experience_certificate(data):
-    return f"""
-Experience Certificate
+    return f"""Experience Certificate
 
-This is to certify that Mr./Ms. {data['name']} worked as a {data['designation']} at {data['company']} from {data['start_date']} to {data['end_date']}. During this period, they displayed professionalism, dedication, and efficiency in all assigned tasks.
+This is to certify that {data['employee_name']} worked as a {data['position']} at {data['company_name']} from {data['duration']}. Their performance was {data['performance']}.
 
 We wish them success in future endeavors.
 
-Authorized Signatory
-{data['company']}
-Date: {data['date']}
+HR Department,
+{data['company_name']}
 """
 
 def generate_freelance_contract(data):
-    return f"""
-Freelance Contract Agreement
+    return f"""Freelance Service Agreement
 
-This agreement is made on {data['date']} between {data['client_name']} and {data['freelancer_name']}.
+This agreement is made between {data['freelancer_name']} (Freelancer) and {data['client_name']} (Client).
 
-The freelancer agrees to complete the project titled "{data['project_title']}" by {data['deadline']} for a total payment of {data['payment']}.
+Service: {data['service_description']}
+Rate: {data['rate']}
+Duration: {data['duration']}
+Payment Terms: {data['payment_terms']}
 
-Both parties agree to the terms stated above.
+Both parties agree to the terms above.
 
-Client: {data['client_name']}
-Freelancer: {data['freelancer_name']}
+Signed,
+{data['freelancer_name']} and {data['client_name']}
 """
 
 def generate_resignation_letter(data):
-    return f"""
-To,
-The Manager,
-{data['company']},
-{data['address']}
+    return f"""To,
+{data['company']}
 
-Subject: Resignation from the Position of {data['position']}
+Subject: Resignation Letter
 
 Respected Sir/Madam,
 
-Please accept this letter as formal notice of my resignation from the position of {data['position']} at {data['company']}, effective from {data['last_working_day']}. I have enjoyed working with the team and appreciate the opportunities provided.
+I, {data['name']}, hereby resign from my position of {data['position']}. My last working day will be {data['last_day']}. Reason: {data['reason']}
 
-Kindly initiate the clearance process. I am available to ensure a smooth transition.
+Thank you for the support and opportunity.
 
 Sincerely,
 {data['name']}
-Date: {data['date']}
 """
 
 def generate_rental_agreement(data):
-    return f"""
-Rental Agreement
+    return f"""Rental Agreement
 
-This agreement is made on {data['date']} between the landlord {data['landlord_name']} and the tenant {data['tenant_name']}.
+This agreement is made between {data['landlord_name']} (Landlord) and {data['tenant_name']} (Tenant).
 
-The landlord agrees to rent the property located at {data['property_address']} for a monthly rent of {data['monthly_rent']} for a duration of {data['rental_duration']}, starting from {data['start_date']}.
+Property: {data['property_address']}
+Monthly Rent: {data['rent_amount']}
+Duration: {data['duration']}
+Terms and Conditions:
+{data['terms']}
 
-Both parties agree to abide by the terms and conditions stated in this agreement.
+Both parties agree to the terms of this agreement.
 
-Landlord: {data['landlord_name']}
-Tenant: {data['tenant_name']}
+Signed,
+{data['landlord_name']} and {data['tenant_name']}
 """
