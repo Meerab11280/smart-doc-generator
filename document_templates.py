@@ -83,6 +83,7 @@ I shall remain grateful for your kind approval.
 
 Yours sincerely,
 {data['name']}
+Roll Number: {data['roll_number']}
 Date: {data['date']}
 """
 
