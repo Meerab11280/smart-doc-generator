@@ -1,23 +1,9 @@
-from fpdf import FPDF
+from xhtml2pdf import pisa
 from io import BytesIO
 
-def generate_pdf(text):
-    try:
-        pdf = FPDF()
-        pdf.add_page()
-        pdf.set_auto_page_break(auto=True, margin=15)
-        pdf.set_font("Arial", size=12)
-
-        # Add each line of the text to the PDF
-        for line in text.split('\n'):
-            pdf.multi_cell(0, 10, line)
-
-        # Save the PDF to a BytesIO buffer
-        pdf_output = BytesIO()
-        pdf.output(pdf_output)
-        pdf_output.seek(0)
-
-        return pdf_output.read()
-    except Exception as e:
-        print("PDF generation error:", e)
-        return None
+def create_pdf(content: str) -> BytesIO:
+    pdf_file = BytesIO()
+    html = f"<pre style='font-family: Arial; font-size: 12pt'>{content}</pre>"
+    pisa.CreatePDF(html, dest=pdf_file)
+    pdf_file.seek(0)
+    return pdf_file
